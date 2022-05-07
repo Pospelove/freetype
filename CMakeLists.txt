@@ -447,6 +447,9 @@ add_library(freetype
   ${BASE_SRCS}
 )
 
+find_package(Threads REQUIRED)
+target_link_libraries(freetype PRIVATE Threads::Threads)
+
 set_target_properties(
   freetype PROPERTIES
     C_VISIBILITY_PRESET hidden)
